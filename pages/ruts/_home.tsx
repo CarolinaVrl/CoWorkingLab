@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import SeamlessService from '@/components/Seamless-Service';
 import ValuableInvest from '@/components/Valuable-Invest';
+import WhyChoose from '@/components/Why-Choose';
 import Link from 'next/link';
 import Navbar from '../../components/Nav-bar';
 
@@ -27,6 +28,7 @@ function Home() {
           <Hero />
           <ValuableInvest />
           <SeamlessService />
+          <WhyChoose />
         </section>
       </main>
     </>
