@@ -34,7 +34,7 @@ function Hero() {
       </section>
       <section className="flex justify-center items-center gap-4 p-4 ">
         {users.map((user) => (
-          <div className="relative">
+          <div key={''} className="relative">
             <Image src={user.user} alt="" width={64} height={64} />
             <Image
               className="absolute top-0 -right-3"

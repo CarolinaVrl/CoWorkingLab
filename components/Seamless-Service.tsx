@@ -1,9 +1,9 @@
+import Title from './Title';
+
 function SeamlessService() {
   return (
     <div className="p-6 flex flex-col bg-blueSky gap-5">
-      <h2 className="text-blueDark font-bold text-3xl font-nunito">
-        Seamless service targeting your unique needs
-      </h2>
+      <Title>Seamless service targeting your unique needs</Title>
       <div className="w-7 h-2 bg-blueLight"></div>
       <div className="flex font-light text-base flex-col font-nunito ">
         <p>
@@ -25,7 +25,6 @@ function SeamlessService() {
             a world of opportunities for investors and their families.
           </p>
           <p>
-            {' '}
             A Golden Visa permit provides visa-free access to many countries
             across the globe.
           </p>

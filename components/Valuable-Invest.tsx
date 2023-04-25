@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Imagen from '../public/twoPerson.png';
+import Title from './Title';
 function ValuableInvest() {
   return (
     <div className="bg-white flex flex-col items-center justify-center">
@@ -7,9 +8,7 @@ function ValuableInvest() {
         <Image width={363} height={243} alt="" src={Imagen} />
       </div>
       <div className="p-6 flex flex-col gap-5">
-        <h2 className="text-blueDark font-bold text-3xl font-nunito">
-          The most valuable investment you may ever make
-        </h2>
+        <Title> The most valuable investment you may ever make</Title>
         <div className="w-7 h-2 bg-blueLight"></div>
         <div className="flex font-light text-base flex-col font-nunito gap-5">
           <p>
