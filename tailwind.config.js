@@ -10,13 +10,13 @@ module.exports = {
     extend: {
       colors: {
         white: '#FFFFFF',
-        'blue-sky': '#E6ECF5',
+        blueSky: '#E6ECF5',
         red: '#EF3061',
-        'blue-dark': '#07469C',
+        blueDark: '#07469C',
         dark: '#333333',
-        'blue-light': '#0099E1',
-        'gray-light': '#757575',
-        'white-dark': '#F2F2F2',
+        blueLight: '#0099E1',
+        grayLight: '#757575',
+        whiteDark: '#F2F2F2',
       },
       screens: {
         xs: '375px',
