@@ -3,7 +3,7 @@ import SeamlessService from '@/components/Seamless-Service';
 import ValuableInvest from '@/components/Valuable-Invest';
 import WhyChoose from '@/components/Why-Choose';
 import Link from 'next/link';
-import Navbar from '../../components/Nav-bar';
+import Navbar from '../components/Nav-bar';
 
 function Home() {
   return (
@@ -13,10 +13,10 @@ function Home() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/ruts/_auth">Ahth</Link>
+          <Link href="/_auth">Ahth</Link>
         </li>
         <li>
-          <Link href="/ruts/_home-application">Application</Link>
+          <Link href="/_home-application">Application</Link>
         </li>
       </ul>
       <Navbar />
