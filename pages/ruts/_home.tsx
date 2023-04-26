@@ -21,7 +21,7 @@ function Home() {
       </ul>
       <LayoutHome>
         <main className="bg-blueSky w-full h-full">
-          <h1 className="font-semibold text-nunito text-[41px] py-[141px]">
+          <h1 className="font-semibold text-nunito text-center text-[41px] py-[141px]">
             Lets go it together!
           </h1>
           <section className=" flex flex-col gap-10">
