@@ -1,4 +1,8 @@
 
+.contenedor{
+  display: grid;
+  grid-template-columns: 1fr 35%;
+}
 
 .swiper {
     width: 100%;
@@ -9,8 +13,7 @@
     text-align: center;
     font-size: 18px;
     background: #fff;
-  
-    /* Center slide text vertically */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,3 +25,9 @@
     height: 100%;
     object-fit: cover;
   }
+
+.swiper-pagination{
+  position: relative;
+  left: -16vh;
+  top: -4vh;
+}
