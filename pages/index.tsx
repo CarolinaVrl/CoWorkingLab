@@ -1,12 +1,10 @@
-import Homes from './_home';
+import Home from './_home'
 
-export default function Home() {
+export default function Index() {
   return (
     <>
-      <div className="bg-red ">HOME asdasd</div>
-      <Homes />
+    <Home/>
     </>
   );
 }
 
-// pruebita no me maten Steven

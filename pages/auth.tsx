@@ -1,14 +1,22 @@
 import Image from 'next/image';
+import Ruts_menu from './ruts';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Autoplay, Navigation, Pagination } from 'swiper';
 
+import { Button, ThemeProvider } from "@material-tailwind/react";
+
 export default function App() {
   return (
     <>
+     <Ruts_menu/>
       <div className="contenedor">
+        <ThemeProvider>
+          <div>hola mundo soy el material</div>
+          <Button>hola soy un material</Button>
+        </ThemeProvider>
         <div>
           <h1 className="bg-red">Create an account</h1>
           <p>And start your trip with us.</p>
@@ -117,32 +125,16 @@ export default function App() {
             className="mySwiper"
           >
             <SwiperSlide>
-              <Image
-                src="/imgs_auth/user_1.svg"
-                alt="hola"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <Image src={"/imgs_auth/user_1.svg"} alt="hola1" width={1000} height={1000}/>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src="/imgs_auth/user_2.svg"
-                alt="hola"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <Image src={"/imgs_auth/user_2.svg"} alt="hola2" width={1000} height={1000}/>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src="/imgs_auth/user_3.svg"
-                alt="hola"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <Image src={"/imgs_auth/user_3.svg"} alt="hola3" width={1000} height={1000}/>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src="/imgs_auth/user_4.svg"
-                alt="hola"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <Image src={"/imgs_auth/user_4.svg"} alt="hola4" width={1000} height={1000}/>
             </SwiperSlide>
           </Swiper>
         </div>

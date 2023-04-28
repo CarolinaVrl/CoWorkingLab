@@ -4,22 +4,12 @@ import SeamlessService from '@/components/Seamless-Service';
 import SenMessageHome from '@/components/SenMessageHome';
 import ValuableInvest from '@/components/Valuable-Invest';
 import WhyChoose from '@/components/Why-Choose';
-import Link from 'next/link';
+import Ruts_menu from './ruts';
 
 function Home() {
   return (
     <>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/_auth">Ahth</Link>
-        </li>
-        <li>
-          <Link href="/_home-application">Application</Link>
-        </li>
-      </ul>
+      <Ruts_menu/>
       <LayoutHome>
         <main className="bg-blueSky w-full h-full">
           <h1 className="font-semibold text-nunito text-center text-[41px] py-[141px]">
