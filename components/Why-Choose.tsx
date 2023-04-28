@@ -1,7 +1,7 @@
 import Card from './Card';
+import TextCardHome from './Text-card-home';
 import Title from './Title';
 import TitleCardHome from './Title-Card-home';
-import TextCardHome from './text-card-home';
 
 function WhyChoose() {
   return (
