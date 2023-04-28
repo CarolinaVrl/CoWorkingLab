@@ -14,10 +14,10 @@ function Home() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/ruts/_auth">Ahth</Link>
+          <Link href="/_auth">Ahth</Link>
         </li>
         <li>
-          <Link href="/ruts/_home-application">Application</Link>
+          <Link href="/_home-application">Application</Link>
         </li>
       </ul>
       <LayoutHome>

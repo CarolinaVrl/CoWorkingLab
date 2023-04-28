@@ -1,4 +1,4 @@
-import Homes from './ruts/_home';
+import Homes from './_home';
 
 export default function Home() {
   return (
