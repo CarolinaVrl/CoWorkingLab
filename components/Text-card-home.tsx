@@ -7,6 +7,7 @@ function TextCardHome({ children }: itextcard) {
     <p className="font-mulish font-light text-[#000000] text-base ">
       {children}
     </p>
+    // i am commint
   );
 }
 
