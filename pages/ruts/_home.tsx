@@ -1,6 +1,7 @@
 import LayoutHome from '@/Layout/Layout-Home';
 import Hero from '@/components/Hero';
 import SeamlessService from '@/components/Seamless-Service';
+import SenMessageHome from '@/components/SenMessageHome';
 import ValuableInvest from '@/components/Valuable-Invest';
 import WhyChoose from '@/components/Why-Choose';
 import Link from 'next/link';
@@ -29,6 +30,7 @@ function Home() {
             <ValuableInvest />
             <SeamlessService />
             <WhyChoose />
+            <SenMessageHome />
           </section>
         </main>
       </LayoutHome>
