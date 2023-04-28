@@ -3,10 +3,9 @@ import Imagen from '../public/twoPerson.png';
 import Title from './Title';
 function ValuableInvest() {
   return (
-    <div className="bg-white flex flex-col items-center justify-center">
-      <div>
-        <Image width={363} height={243} alt="" src={Imagen} />
-      </div>
+    <div className="bg-white flex flex-col items-center justify-center  md:flex-row w-full px-60 gap-5">
+      <Image className="  " alt="" src={Imagen} width={405} />
+
       <div className="p-6 flex flex-col gap-5">
         <Title> The most valuable investment you may ever make</Title>
         <div className="w-7 h-2 bg-blueLight"></div>
