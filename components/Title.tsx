@@ -5,7 +5,7 @@ interface text {
 }
 function Title({ children }: text) {
   return (
-    <h1 className="text-blueDark font-bold text-3xl font-nunito md: text-[32px]">
+    <h1 className="text-blueDark font-bold text-3xl  font-nunito md: text-[32px]">
       {children}
     </h1>
   );

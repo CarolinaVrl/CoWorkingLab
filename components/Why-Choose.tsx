@@ -1,44 +1,37 @@
+import Card from './Card';
 import Title from './Title';
+import TitleCardHome from './Title-Card-home';
+import TextCardHome from './text-card-home';
 
 function WhyChoose() {
   return (
-    <div>
+    <div className="flex flex-col items-center gap-2 justify-center">
       <Title>Why Choose Us</Title>
 
-      <div className="w-7 h-2 bg-blueLight"></div>
-      <div className=" flex flex-col gap-5">
-        <div className="bg-white rounded-[10px] flex flex-col items-center justify-center gap-5 py-7 px-8">
-          <h2>Secure and Safe</h2>
+      <div className="w-7 h-2 bg-blueLight "></div>
+      <div className="pt-8 flex flex-col gap-5 items-center justify-center md:flex-row">
+        <Card>
+          <TitleCardHome>Speed and Simplicity</TitleCardHome>
+          <TextCardHome>
+            World-class data centers and state-of-the-art security. Your credit
+            card information will never be exposed to any government websites!
+          </TextCardHome>
+        </Card>
+        <Card>
+          <TitleCardHome>Secure and Safe</TitleCardHome>
+          <TextCardHome>
+            Easy, traveler-friendly application process. Simple and much less
+            complicated than dealing with foreign governments.
+          </TextCardHome>
+        </Card>
+        <Card>
+          <TitleCardHome> Awesome support</TitleCardHome>
 
-          <div className="flex font-light text-base w flex-col font-nunito ">
-            <p>
-              World-class data centers and state-of-the-art security. Your
-              credit card information will never be exposed to any government
-              websites!
-            </p>
-          </div>
-          <div className="bg-white rounded-[10px] flex flex-col items-center justify-center gap-5 py-7 px-8"></div>
-
-          <h2>Speed and Simplicity</h2>
-
-          <div className="flex font-light text-base  flex-col font-nunito ">
-            <p>
-              Easy, traveler-friendly application process. Simple and much less
-              complicated than dealing with foreign governments.
-            </p>
-          </div>
-          <div className="bg-white rounded-[10px] flex flex-col items-center justify-center gap-5 py-7 px-8"></div>
-          <div className="bg-white rounded-[10px] flex flex-col items-center justify-center gap-5 py-7 px-8"></div>
-
-          <h2>Awesome support</h2>
-
-          <div className="flex font-light text-base flex-col font-nunito ">
-            <p>
-              Our customer support is ready to help 24/7. We want you to enjoy
-              your travels and avoid the stress of getting a residence!
-            </p>
-          </div>
-        </div>
+          <TextCardHome>
+            Our customer support is ready to help 24/7. We want you to enjoy
+            your travels and avoid the stress of getting a residence!
+          </TextCardHome>
+        </Card>
       </div>
     </div>
   );
