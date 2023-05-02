@@ -7,28 +7,24 @@ import {
     Avatar,
     Typography,
   } from "@material-tailwind/react";
-
+import Image from "next/image";
 
 const ruts = () => {
     return (
         <>
         <style jsx>{
             `.menu_provisional{
-                position: fixed;
                 text-align: center;
-                background: powderblue;
             }`
         }</style>
         <div className="menu_provisional">
-      <Menu>
+      <Menu placement="top-start">
       <MenuHandler>
-        <Avatar
-          variant="circular"
-          alt="candice wu"
-          className="cursor-pointer"
-          src="/developer_full_stack/user_3.jpg"
-        />
-      </MenuHandler><div><h1>Menu provisional</h1></div>
+      <div className="flex">
+        <h2 className="text-3xl  px-5 font-bold font-nunito">resimex</h2>
+        <Image alt="" width={35} height={35} src={'/imgs_users/flag_Mexico.png'} />
+      </div>
+      </MenuHandler>
       <MenuList>
         <MenuItem className="flex items-center gap-2">
             <Avatar
