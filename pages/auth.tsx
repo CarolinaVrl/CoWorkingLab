@@ -1,4 +1,3 @@
-import Ruts_menu from './ruts';
 import LayoutHome from '@/layout_auth/layout_auth';
 import Swipers from './login/swipers';
 import Sing_up from './login/sing_up';
@@ -16,8 +15,8 @@ export default function App() {
 
   return (
     <>
-    <style jsx>{
-            `
+      <style jsx>{
+        `
             .box_auth{
             display: grid;
             grid-template-columns: 1fr 59vh;
@@ -26,14 +25,14 @@ export default function App() {
            
           }
           `
-        }</style>
-        
-          <div className="box_auth">
+      }</style>
+
+      <div className="box_auth">
         <LayoutHome>
-          <Sing_up/>
+          <Sing_up />
         </LayoutHome>
 
-        <Swipers/>
+        <Swipers />
       </div>
 
     </>
