@@ -5,15 +5,9 @@
 @tailwind utilities;
 
 
-/* CSS del swiper, este permite modificar la posicion, no pude ponerlo de forma normal
-porque el globals.css hacia un pequeño choque al modificar el css del swiper
-vere si hay forma de solucionarlo */
-
-.contenedor{
-  display: grid;
-  grid-template-columns: 1fr 35%;
+:root{
+  --swiper-theme-color: #ffffff !important;
 }
-
   .swiper {
       width: 100%;
       height: 100%;
@@ -30,14 +24,17 @@ vere si hay forma de solucionarlo */
     
     .swiper-slide img {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 100vh !important;
+      height: 100vh !important;
       object-fit: cover;
+      opacity: 0.8;
     }
   
   .swiper-pagination{
     position: relative !important;
-    left: -16vh !important;
-    top: -4vh !important;
+    left: -20vh !important;
+    top: -6vh !important;
   }
-  
+  .swiper-pagination-bullet{
+    background-color: white !important;
+  }
