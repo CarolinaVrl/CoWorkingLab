@@ -1,4 +1,4 @@
-import FooterHome from '@/components/Footer-home';
+import FooterHome from '@/components/FooterHome';
 import Navbar from '@/components/Nav-bar';
 import { ReactNode } from 'react';
 
