@@ -2,7 +2,7 @@ import Title from './Title';
 
 function SeamlessService() {
   return (
-    <div className="p-6 flex flex-col bg-blueSky gap-5 md:flex-row px-60 gap-24">
+    <div className="p-6 flex flex-col bg-blueSky gap-5 md:flex-row  gap-24">
       <div className="flex flex-col gap-4">
         <Title>Seamless service targeting your unique needs</Title>
         <div className="w-7 h-2 bg-blueLight"></div>

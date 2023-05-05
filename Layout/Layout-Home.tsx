@@ -9,7 +9,8 @@ function LayoutHome({ children }: layoutHome) {
   return (
     <div>
       <Navbar />
-      <main> {children}</main>
+      <main className="bg-blueSky w-[369px]  h-full "> {children}</main>
+
       <FooterHome />
     </div>
   );
