@@ -4,12 +4,12 @@ import SeamlessService from '@/components/Seamless-Service';
 import SenMessageHome from '@/components/SenMessageHome';
 import ValuableInvest from '@/components/Valuable-Invest';
 import WhyChoose from '@/components/Why-Choose';
-import Ruts_menu from './ruts';
+import Ruts_menu from '../components/Menu';
 
 function Home() {
   return (
     <>
-      <Ruts_menu/>
+      <Ruts_menu />
       <LayoutHome>
         <main className="bg-blueSky w-full h-full">
           <h1 className="font-semibold text-nunito text-center text-[41px] py-[141px]">

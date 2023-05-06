@@ -1,12 +1,12 @@
+import Ruts_menu from '@/components/Menu';
 import Image from 'next/image';
-import Ruts_menu from '@/pages/ruts';
 
 function LayoutHome({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <style jsx>{
         `
-          .contento{
+          .box_imgs{
             position: fixed;
             width: 100%;
             height: 100%;
@@ -15,8 +15,8 @@ function LayoutHome({ children }: { children: React.ReactNode }) {
           }`
       }</style>
       <Ruts_menu />
-      <main> {children}</main>
-      <div className='contento'>
+      {children}
+      <div className='box_imgs'>
         <Image alt="" src={'/imgs_auth/rectangulo_2.svg'} fill />
       </div>
     </div>
