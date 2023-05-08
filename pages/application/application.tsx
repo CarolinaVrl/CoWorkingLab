@@ -8,6 +8,7 @@ export default function Home() {
         <Link href="/">Volver Home</Link>
         <Link href="/application/steps/stepsPersonalInfoPage">Step 1</Link>
         <Link href="/application/steps/stepsYourLoadInfo">Step 2</Link>
+        <Link href="/application/steps/stepsCheckout">Step 3</Link>
       </li>
     </>
   );

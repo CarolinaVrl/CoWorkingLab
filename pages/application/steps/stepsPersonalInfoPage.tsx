@@ -1,4 +1,4 @@
-import LayoutSteps from '@/Layout/layoutSteps';
+import LayoutSteps from '@/Layout/LayoutSteps';
 import StepsPersonalInfo from '@/components/StepsPersonalInfo';
 
 function stepsPersonalInfoPage() {
