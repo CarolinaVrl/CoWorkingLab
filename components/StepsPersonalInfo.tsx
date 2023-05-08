@@ -11,7 +11,7 @@ function StepsPersonalInfo() {
 
   return (
     <div
-      className="flex items-center justify-center md:flex items-center justify-center
+      className="flex items-center justify-center md:flex px-[150px] items-center justify-center
     "
     >
       <div className="flex flex-col items-center justify-center gap-10 py-[60px]">
@@ -124,11 +124,13 @@ function StepsPersonalInfo() {
         </section>
         <h2
           className="underline decoration-solid font-bold font-nunito text-center text-xl text-blueDark
-      md: hidden"
+      md:hidden"
         >
           Help & frequency questions
         </h2>
-        <ModalHelp />
+        <div className="md:hidden">
+          <ModalHelp />
+        </div>
       </div>
 
       <div className="hidden  md:flex relative flex-col p-8 gap-[26px] justify-center rounded-[10px] shadow-lg m-auto w-[285px] h-[380px]  bg-blueSky">
