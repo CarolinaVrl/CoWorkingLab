@@ -6,7 +6,7 @@ export default function Home() {
       <div className="bg-red-200">HOLA mundo soy aplicationaaaaa</div>
       <li>
         <Link href="/">Volver Home</Link>
-        <Link href="/application/steps/steps">aaa</Link>
+        <Link href="/application/steps/stepsPersonalInfoPage">aaa</Link>
       </li>
     </>
   );
