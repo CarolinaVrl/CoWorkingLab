@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Imagen from '../public/twoPerson.png';
+import image2 from '../public/twoPerson.png';
 import Title from './Title';
 function ValuableInvest() {
   return (
-    <div className="bg-white flex flex-col items-center justify-center  md:flex-row w-full px-60 gap-5">
-      <Image className="  " alt="" src={Imagen} width={405} />
+    <div className="bg-white flex flex-col items-center justify-center  md:flex-row w-full gap-5">
+      <Image className="  " alt="" src={image2} height={243} width={405} />
 
       <div className="p-6 flex flex-col gap-5">
         <Title> The most valuable investment you may ever make</Title>

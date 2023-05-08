@@ -1,4 +1,4 @@
-import FooterHome from '@/components/Footer-home';
+import FooterHome from '@/components/FooterHome';
 import Navbar from '@/components/Nav-bar';
 import { ReactNode } from 'react';
 
@@ -9,7 +9,8 @@ function LayoutHome({ children }: layoutHome) {
   return (
     <div>
       <Navbar />
-      <main> {children}</main>
+      <main className="bg-blueSky w-[369px]  h-full "> {children}</main>
+
       <FooterHome />
     </div>
   );
