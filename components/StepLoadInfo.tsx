@@ -1,9 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import upload from '../public/upload.svg';
+import ModalHelp from './ModalHelp';
+import TextCardHome from './Text-card-home';
 function StepLoadInfo() {
+  const [isVisible, setIsVisible] = useState(false);
+  const closeModal = () => {
+    setIsVisible(false);
+  };
+
   return (
-    <div className="w-full md:px-[150px] ">
+    <div className="w-full md:flex justify-center place-items-start items-start content-start  lg:px-[150px]">
       <div className="flex flex-col items-center justify-center gap-10 py-[60px] px-[17px]">
         <section className=" flex flex-col gap-4 w-full">
           <Link
@@ -58,9 +66,31 @@ function StepLoadInfo() {
             SAVE AND CONTINUE
           </button>
         </section>
-        <h2 className="text-blueDark text-xl underline font-bold font-nunito">
+        <h2
+          onClick={() => setIsVisible(true)}
+          className="text-blueDark text-xl underline font-bold font-nunito md:hidden"
+        >
           Why is important this information?
         </h2>
+        <div className="md:hidden">
+          <ModalHelp visible={isVisible} closed={closeModal} />
+        </div>
+      </div>
+      <div className="hidden  md:flex  relative flex-col p-8 gap-[26px] justify-center rounded-[10px] shadow-lg m-auto w-[285px] h-[380px]  bg-blueSky">
+        <h2
+          className=" font-bold font-nunito text-left text-xl text-blueDark md:
+        "
+        >
+          Help & frequency <br /> questions
+        </h2>
+        <TextCardHome>
+          Lifestyle choices vary, which is why we take the time to learn about
+          your individual situation and requirements.
+        </TextCardHome>
+        <TextCardHome>
+          We’ll assist you from start to finish, ensuring you have the insight
+          and knowledge needed to succeed.
+        </TextCardHome>
       </div>
     </div>
   );

@@ -1,17 +1,21 @@
 import { Field, Form, Formik } from 'formik';
-import Image from 'next/image';
 import Link from 'next/link';
-import close from '../public/close.svg';
+
+import { useState } from 'react';
 import ModalHelp from './ModalHelp';
 import TextCardHome from './Text-card-home';
 function StepsPersonalInfo() {
+  const [isVisible, setIsVisible] = useState(false);
   const showData = (values: object) => {
     alert(values);
+  };
+  const closeModal = () => {
+    setIsVisible(false);
   };
 
   return (
     <div
-      className="flex items-center justify-center md:flex px-[150px] items-center justify-center
+      className="flex items-center justify-center md:flex content-center lg:px-[150px] items-center justify-center
     "
     >
       <div className="flex flex-col items-center justify-center gap-10 py-[60px]">
@@ -123,24 +127,18 @@ function StepsPersonalInfo() {
           </Formik>
         </section>
         <h2
+          onClick={() => setIsVisible(true)}
           className="underline decoration-solid font-bold font-nunito text-center text-xl text-blueDark
       md:hidden"
         >
           Help & frequency questions
         </h2>
         <div className="md:hidden">
-          <ModalHelp />
+          <ModalHelp visible={isVisible} closed={closeModal} />
         </div>
       </div>
 
       <div className="hidden  md:flex relative flex-col p-8 gap-[26px] justify-center rounded-[10px] shadow-lg m-auto w-[285px] h-[380px]  bg-blueSky">
-        <Image
-          className="absolute right-4 top-4"
-          height={14}
-          width={14}
-          alt=""
-          src={close}
-        />
         <h2 className=" font-bold font-nunito text-left text-xl text-blueDark">
           Help & frequency <br /> questions
         </h2>
