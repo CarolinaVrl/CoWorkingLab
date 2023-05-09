@@ -1,12 +1,11 @@
 
-import LayoutHome from '@/layout_auth/layout_auth';
-import Link from "next/link";
+import LayoutHome from '@/Layout/Layout-Auth';
 import {
     Button,
     Card,
     Typography,
-    Input
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 const successful_password = () => {
     return (

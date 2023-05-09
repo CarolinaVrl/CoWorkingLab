@@ -9,15 +9,18 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ruts = () => {
+const Menu_ruts = () => {
   return (
     <>
-      <style jsx>
-        {`
-          .menu_provisional {
-            text-align: center;
-          }
-        `}
+      <style jsx>{
+        `.menu_provisional{
+          text-align: center;
+          position: absolute;
+          top: 11px;
+          left: 4px;
+          z-index: 2;
+            }`
+      }
       </style>
 
       <div className="menu_provisional">
@@ -47,7 +50,7 @@ const ruts = () => {
                 </Typography>
               </MenuItem>
             </Link>
-            <Link href="/auth">
+            <Link href="/auth/sing-up">
               <MenuItem className="flex items-center gap-2">
                 <Avatar
                   variant="circular"
@@ -87,4 +90,4 @@ const ruts = () => {
   );
 };
 
-export default ruts;
+export default Menu_ruts;
