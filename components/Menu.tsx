@@ -64,7 +64,7 @@ const Menu_ruts = () => {
               </MenuItem>
             </Link>
             <hr className="my-2 border-blue-gray-50" />
-            <Link href="/application/application">
+            <Link href="/application/index">
               <MenuItem className="flex items-center gap-2">
                 <Avatar
                   variant="circular"
