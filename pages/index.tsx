@@ -12,7 +12,7 @@ export default function Index() {
         <h1 className="font-semibold text-nunito text-center text-[41px] py-[141px]">
           Lets go it together!
         </h1>
-        <section className="px-6 flex flex-col gap-10">
+        <section className="px-6 flex flex-col gap-10 pb-[110px]">
           <Hero />
           <ValuableInvest />
           <SeamlessService />
