@@ -3,6 +3,7 @@ import Image from 'next/image';
 import arrow from '../public/arrow.png';
 import background from '../public/backgroun-home-city.svg';
 import mobilebackground from '../public/backgroun-mobile-version.svg';
+import ModalSendMessage from './ModalSendMessage';
 
 function SenMessageHome() {
   const SendMessage = () => {
@@ -63,6 +64,7 @@ function SenMessageHome() {
           </Formik>
         </div>
       </div>
+      <ModalSendMessage />
     </div>
   );
 }

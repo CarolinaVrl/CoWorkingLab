@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import arrowUp from '../public/arrowUp.svg';
 import Card from './Card';
 import TextCardHome from './Text-card-home';
 import Title from './Title';
@@ -5,7 +7,7 @@ import TitleCardHome from './Title-Card-home';
 
 function WhyChoose() {
   return (
-    <div className="flex flex-col items-center gap-2 justify-center">
+    <div className=" bg-white relative flex flex-col items-center gap-2 justify-center pb-[110px]">
       <Title>Why Choose Us</Title>
 
       <div className="w-7 h-2 bg-blueLight "></div>
@@ -32,6 +34,12 @@ function WhyChoose() {
             your travels and avoid the stress of getting a residence!
           </TextCardHome>
         </Card>
+      </div>
+      <div className="absolute bottom-[25px] right-[84px] flex items-center gap-[22px]">
+        <Image alt="arrow" src={arrowUp} height={30} width={30} />
+        <a className="font-mulish font-medium text-sm" href="#top">
+          Back to top
+        </a>
       </div>
     </div>
   );
