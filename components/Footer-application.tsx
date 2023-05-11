@@ -1,6 +1,6 @@
 import Image from "next/image";
-const FooterApplication = () => {
-    //{ page }: { page: string } const images = page === 'Application' ? '/imgs_application/img-1.svg' : 'todo salio mal'
+const FooterApplication = ({ page }: { page: string }) => {
+    // const images = page === 'Application' ? '/imgs_application/img-1.svg' : 'todo salio mal'
     return (
         <>
             <style jsx>
