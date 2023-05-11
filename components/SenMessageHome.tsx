@@ -1,13 +1,27 @@
 import { Field, Form, Formik } from 'formik';
 import Image from 'next/image';
+import { useState } from 'react';
 import arrow from '../public/arrow.png';
 import background from '../public/backgroun-home-city.svg';
 import mobilebackground from '../public/backgroun-mobile-version.svg';
 import ModalSendMessage from './ModalSendMessage';
 
 function SenMessageHome() {
+  const [openModal, setOpenModal] = useState(false);
+  const [error, setError] = useState(false);
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+  const validate = (values: any) => {
+    if (values.name === '') {
+      setError(true);
+    }
+    return error;
+  };
   const SendMessage = () => {
-    alert('hola');
+    if (error) {
+      setOpenModal(true);
+    }
   };
   return (
     <div className="w-full relative    ">
@@ -41,7 +55,7 @@ function SenMessageHome() {
                 className="w-[315px] py-1 border-b-[#2E02494D] border-b-solid border-2 border-opacity-30
              outline-none focus:border-b-blueLight peer placeholder-[#2E02494D] placeholder-opacity-30"
                 placeholder="Your email"
-                type="text"
+                type="email"
               />
 
               <Field
@@ -64,7 +78,7 @@ function SenMessageHome() {
           </Formik>
         </div>
       </div>
-      <ModalSendMessage />
+      <ModalSendMessage visible={openModal} close={closeModal} />
     </div>
   );
 }
