@@ -9,8 +9,9 @@ const instance = axios.create({
     baseURL: BASE_URL,
 })
 
+
 instance.interceptors.request.use(async (config) => {
-    const token = cookies.get(`token`)
+    const token = cookies.get(`app-token`)
     if (token) {
         config.headers.Authorization = `Bearer ${token}`
     }

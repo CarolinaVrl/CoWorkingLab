@@ -10,24 +10,29 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 
-import {
-    Form,
-    Formik
-} from 'formik';
+import { login } from '@/lib/service/auth.service';
 
-interface MyFormValues {
-    firstName: string;
+import { Form, Formik } from "formik";
+import Cookies from 'js-cookie';
+// import { useRouter } from 'next/router';
+
+
+interface Values {
+    email: string
+    password: string
 }
 
-
 const SingUp_Card = () => {
-    const initialValues: MyFormValues = { firstName: '' };
+    const initialValues: Values = { email: " ", password: " " }
 
-    //     const submitSing = (data: {email: string, password: string}) =>{
-    //         login({email: data.email})
-    //     }
-
-
+    const submitUp = (data: { email: string, password: string }) => {
+        login({ email: data.email, passuord: data.password }).then((res) => {
+            Cookies.set('app-token', res.data.token)
+            // useRouter().push('/application')
+        }).catch(() => {
+            alert('ocurrio un error')
+        })
+    }
     return (
         <>
             <style jsx>{
@@ -60,18 +65,12 @@ const SingUp_Card = () => {
             <div className="box_auth">
 
 
-
                 <LayoutHome>
                     <div className='box_sing_up'>
-                        <Formik
-                            initialValues={initialValues}
-                            onSubmit={(values, actions) => {
-                                console.log({ values, actions });
-                                alert(JSON.stringify(values, null, 2));
-                                actions.setSubmitting(false);
-                            }}
-                        >
-
+                        <Formik initialValues={initialValues}
+                            onSubmit={(
+                                values: Values,
+                            ) => { submitUp }}>
 
                             <Card className="w-[63vh] items-center">
                                 <Card color="transparent" shadow={false}>
@@ -81,14 +80,15 @@ const SingUp_Card = () => {
                                     <Typography color="gray" className="mt-1 font-mulish text-[#000000]">
                                         And start your trip with us.
                                     </Typography>
-                                    <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
+                                    <Form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
+
                                         <div className="mb-4 flex flex-col gap-6">
                                             <h1 className="inputs_title2 font-mulish text-[#000000]">Your email*</h1>
-                                            <Input size="lg" label="Please enter your email" />
+                                            <Input size="lg" label="Please enter your email" id="email" />
                                             <h1 className="inputs_title font-mulish text-[#000000]">Create username*</h1>
                                             <Input size="lg" label="Enter your username" />
                                             <h1 className="inputs_title font-mulish text-[#000000]">Password*</h1>
-                                            <Input type="password" size="lg" label="Enter password" />
+                                            <Input type="password" size="lg" label="Enter password" id='password' />
                                         </div>
                                         <div>
                                             <Checkbox />
@@ -104,11 +104,10 @@ const SingUp_Card = () => {
                                         </div>
 
 
-                                        <Link href="/auth/login">
-                                            <Form><Button className="mt-6" fullWidth type="submit"> Sing Up</Button></Form>
-                                        </Link>
-                                        {/* <label htmlFor="firstName">First Name</label>
-                                        <Field id="firstName" name="firstName" placeholder="First Name" /> */}
+                                        {/* <Link href="/auth/login"> </Link> */}
+                                        <Button className="mt-6" fullWidth type="submit"> Sing Up</Button>
+
+
 
                                         <Typography color="gray" className="mt-4 text-center font-normal font-nunito text-[12px]">
                                             Already have a member?{" "}
@@ -119,7 +118,8 @@ const SingUp_Card = () => {
                                                 Log in
                                             </Link>
                                         </Typography>
-                                    </form>
+
+                                    </Form>
                                 </Card>
                             </Card>
 

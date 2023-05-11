@@ -1,6 +1,6 @@
 import Image from "next/image";
-const FooterApplication = ({ page }: { page: string }) => {
-    const images = page === 'Application' ? '/imgs_application/img-1.svg' : 'todo salio mal'
+const FooterApplication = () => {
+    //{ page }: { page: string } const images = page === 'Application' ? '/imgs_application/img-1.svg' : 'todo salio mal'
     return (
         <>
             <style jsx>
@@ -33,7 +33,6 @@ const FooterApplication = ({ page }: { page: string }) => {
             }
             .imagen{
                 width: 100%;
-                /* background: red; */
                 height: 41vh;
                 position: absolute;
                 top: 57vh;
@@ -61,9 +60,7 @@ const FooterApplication = ({ page }: { page: string }) => {
                 </div>
             </div>
             <div className="imagen">
-                {/* <div className="boxImgs">
-                    <Image src={`${images}`} alt='hola'/>
-            </div> */}
+
             </div>
             <div className="footerApp">
             </div>
