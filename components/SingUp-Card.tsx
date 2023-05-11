@@ -10,20 +10,29 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 
-// import {
-//   Field,
-//   Form,
-//   Formik
-// } from 'formik';
+import { login } from '@/lib/service/auth.service';
 
-// interface MyFormValues {
-//   firstName: string;
-// }
+import { Form, Formik } from "formik";
+import Cookies from 'js-cookie';
+// import { useRouter } from 'next/router';
 
+
+interface Values {
+    email: string
+    password: string
+}
 
 const SingUp_Card = () => {
-    //   const initialValues: MyFormValues = { firstName: '' };
+    const initialValues: Values = { email: " ", password: " " }
 
+    const submitUp = (data: { email: string, password: string }) => {
+        login({ email: data.email, passuord: data.password }).then((res) => {
+            Cookies.set('app-token', res.data.token)
+            // useRouter().push('/application')
+        }).catch(() => {
+            alert('ocurrio un error')
+        })
+    }
     return (
         <>
             <style jsx>{
@@ -54,71 +63,67 @@ const SingUp_Card = () => {
             }</style>
 
             <div className="box_auth">
-                {/* <Formik
-          initialValues={initialValues}
-          onSubmit={(values, actions) => {
-            console.log({ values, actions });
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }}
-        >
-          <Form>
-            <label htmlFor="firstName">First Name</label>
-            <Field id="firstName" name="firstName" placeholder="First Name" />
-            <button type="submit">Submit</button>
-          </Form>
-        </Formik> */}
 
 
                 <LayoutHome>
                     <div className='box_sing_up'>
-                        <Card className="w-[63vh] items-center">
-                            <Card color="transparent" shadow={false}>
-                                <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">
-                                    Create an account
-                                </Typography>
-                                <Typography color="gray" className="mt-1 font-mulish text-[#000000]">
-                                    And start your trip with us.
-                                </Typography>
-                                <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
-                                    <div className="mb-4 flex flex-col gap-6">
-                                        <h1 className="inputs_title2 font-mulish text-[#000000]">Your email*</h1>
-                                        <Input size="lg" label="Please enter your email" />
-                                        <h1 className="inputs_title font-mulish text-[#000000]">Create username*</h1>
-                                        <Input size="lg" label="Enter your username" />
-                                        <h1 className="inputs_title font-mulish text-[#000000]">Password*</h1>
-                                        <Input type="password" size="lg" label="Enter password" />
-                                    </div>
-                                    <div>
-                                        <Checkbox />
-                                        <p>
-                                            By creating an account you are agreeing to our
-                                            <a
-                                                href="#"
-                                                className="font-medium transition-colors hover:text-blue-500 font-nunito text-[12px]"
-                                            >
-                                                &nbsp;Terms and Conditions and Privacy Policy
-                                            </a>
-                                        </p>
-                                    </div>
+                        <Formik initialValues={initialValues}
+                            onSubmit={(
+                                values: Values,
+                            ) => { submitUp }}>
 
-
-                                    <Link href="/auth/login">
-                                        <Button className="mt-6" fullWidth> Sing Up</Button>
-                                    </Link>
-
-                                    <Typography color="gray" className="mt-4 text-center font-normal font-nunito text-[12px]">
-                                        Already have a member?{" "}
-                                        <Link
-                                            href="/auth/login"
-                                            className="font-medium text-blue-500 transition-colors hover:text-blue-700 font-nunito text-[12px]"
-                                        >
-                                            Log in
-                                        </Link>
+                            <Card className="w-[63vh] items-center">
+                                <Card color="transparent" shadow={false}>
+                                    <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">
+                                        Create an account
                                     </Typography>
-                                </form>
+                                    <Typography color="gray" className="mt-1 font-mulish text-[#000000]">
+                                        And start your trip with us.
+                                    </Typography>
+                                    <Form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
+
+                                        <div className="mb-4 flex flex-col gap-6">
+                                            <h1 className="inputs_title2 font-mulish text-[#000000]">Your email*</h1>
+                                            <Input size="lg" label="Please enter your email" id="email" />
+                                            <h1 className="inputs_title font-mulish text-[#000000]">Create username*</h1>
+                                            <Input size="lg" label="Enter your username" />
+                                            <h1 className="inputs_title font-mulish text-[#000000]">Password*</h1>
+                                            <Input type="password" size="lg" label="Enter password" id='password' />
+                                        </div>
+                                        <div>
+                                            <Checkbox />
+                                            <p>
+                                                By creating an account you are agreeing to our
+                                                <a
+                                                    href="#"
+                                                    className="font-medium transition-colors hover:text-blue-500 font-nunito text-[12px]"
+                                                >
+                                                    &nbsp;Terms and Conditions and Privacy Policy
+                                                </a>
+                                            </p>
+                                        </div>
+
+
+                                        {/* <Link href="/auth/login"> </Link> */}
+                                        <Button className="mt-6" fullWidth type="submit"> Sing Up</Button>
+
+
+
+                                        <Typography color="gray" className="mt-4 text-center font-normal font-nunito text-[12px]">
+                                            Already have a member?{" "}
+                                            <Link
+                                                href="/auth/login"
+                                                className="font-medium text-blue-500 transition-colors hover:text-blue-700 font-nunito text-[12px]"
+                                            >
+                                                Log in
+                                            </Link>
+                                        </Typography>
+
+                                    </Form>
+                                </Card>
                             </Card>
-                        </Card>
+
+                        </Formik>
                     </div>
                 </LayoutHome>
                 <Swipers />
