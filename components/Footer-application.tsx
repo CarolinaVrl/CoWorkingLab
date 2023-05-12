@@ -1,6 +1,15 @@
 import Image from "next/image";
-const FooterApplication = ({ page }: { page: string }) => {
-    const images = page
+const FooterApplication = () => {
+
+    const imgRandom = [
+        '/imgs_application/img-1.svg',
+        '/imgs_application/img-2.svg',
+        '/imgs_application/img-3.svg',
+        '/imgs_application/img-4.svg'
+    ]
+
+    const random = Math.floor(Math.random() * imgRandom.length)
+
     return (
         <>
             <style jsx>
@@ -14,13 +23,13 @@ const FooterApplication = ({ page }: { page: string }) => {
                 background: #07469c;
                 position: absolute;
                 z-index: -1;
-                top: 98%;
+                top: 138%;
             }
             .minBox{
                 position: absolute;
                 width: 1vh;
                 height: 7vh;
-                top: 76vh;
+                top: 116vh;
                 right: 31vh;
             }
 
@@ -35,9 +44,9 @@ const FooterApplication = ({ page }: { page: string }) => {
                 width: 100%;
                 height: 41vh;
                 position: absolute;
-                top: 57vh;
+                top: 97vh;
                 z-index: -2;
-                background-image: url(/imgs_application/img-1.svg);
+                background-image: url(${imgRandom[random]});
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -45,7 +54,7 @@ const FooterApplication = ({ page }: { page: string }) => {
             `}
             </style>
             <div className="minBox justify-center w-full md:gap-14">
-                <h1>{images}</h1>
+
                 <div className="relative">
                     <div className="w-[203px] flex flex-col items-center justify-center relative -left-4 h-[203px] rounded-full bg-white">
                         <p>👋</p>
@@ -60,7 +69,6 @@ const FooterApplication = ({ page }: { page: string }) => {
                 </div>
             </div>
             <div className="imagen">
-
             </div>
             <div className="footerApp">
             </div>
