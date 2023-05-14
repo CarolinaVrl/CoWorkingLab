@@ -9,21 +9,23 @@ function LayoutHome({ children }: { children: React.ReactNode }) {
         `
           .box_imgs{
             width: 100%;
-            height: 10%;
-            position: absolute;
-            top: 90%;
-            z-index: -2;
-            background-image: url(/imgs_auth/rectangulo_2.svg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+            height: 53vh;
+            top: 80%;
+            background-image: url(/imgs_auth/rectangulo_1.svg);     
         }
-          
+        @media only screen and (min-width: 768px){
+          .box_imgs{
+            width: 100%;
+            height: 10%;
+            top: 90%;
+            background-image: url(/imgs_auth/rectangulo_2.svg);     
+        }
+        }
           `
       }</style>
       <Ruts_menu />
       {children}
-      <div className='box_imgs'>
+      <div className='box_imgs bg-no-repeat absolute z-[-2] bg-cover'>
 
       </div>
     </div>

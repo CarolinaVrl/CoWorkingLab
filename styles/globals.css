@@ -15,12 +15,11 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #e6ecf5;
 }
-
 .swiper-slide img {
   display: block;
   width: 100% !important;
@@ -31,9 +30,22 @@
 
 .swiper-pagination {
   position: relative !important;
-  left: -20vh !important;
-  top: -6vh !important;
+  left: 2vh !important;
+  top: -4vh !important;
 }
 .swiper-pagination-bullet {
-  background-color: white !important;
+  background-color: #07469c !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .swiper-slide {
+    background: #fff;
+  }
+  .swiper-pagination-bullet {
+    background-color: white !important;
+  }
+  .swiper-pagination {
+    left: -20vh !important;
+    top: -6vh !important;
+  }
 }

@@ -41,29 +41,27 @@ const NewPassword = () => {
         <>
             <style jsx>{
                 `
-          .box_up{
-            text-align: -webkit-center;
-            margin-top: 2rem;
-          }
-          .inputs_title{
-            margin: -5px 0px -16px 0vh;
-            display: flex;
-            font-size: 12px;
-          }
-          .minBoxShadow{
-            box-shadow: 0 4px 6px -1px rgb(0 55 255 / 10%), 0 1px 3px 3px rgb(0 46 255 / 10%);
-            width: 69vh;
-            height: 57vh;
-            padding: 3vh 0vh;
-          }
+                .box_up{
+                    text-align: -webkit-center;
+                  }
+                  .inputs_title{
+                    margin: -5px 0px -16px 0vh;
+                    display: flex;
+                    font-size: 12px;
+                  }
+                  .minBoxShadow{
+                    box-shadow: 0 4px 6px -1px rgb(0 55 255 / 10%), 0 1px 3px 3px rgb(0 46 255 / 10%);
+                    height: 44vh;
+                    padding: 3vh 0vh;
+                  }
           `
             }</style>
 
             <LayoutHome>
-                <div className='box_up'>
+                <div className='box_up mt-[10rem]'>
 
-                    <div className='minBoxShadow'>
-                        <Card className="w-[63vh] items-center" shadow={false}>
+                    <div className='minBoxShadow w-[83%] tablet:w-[69vh]'>
+                        <Card className="w-[3vh] items-center" shadow={false}>
 
                             <Card color="transparent" shadow={false}>
                                 <Typography variant="h4" color="blue-gray" className="font-nunito text-[#000000]">

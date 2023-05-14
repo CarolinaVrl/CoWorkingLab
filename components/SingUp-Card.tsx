@@ -20,7 +20,7 @@ const SingUp_Card = () => {
     // })
     const router = useRouter()
 
-    const { register, handleSubmit, formState: { isValid } } = useForm({
+    const { register, handleSubmit } = useForm({
         defaultValues: {
 
             email: '',
@@ -35,18 +35,19 @@ const SingUp_Card = () => {
         sing_Up({ email: data.email, password: data.password }).then((resp) => {
             cookies.set('app-token', resp.data.token)
             router.push('/application')
-            console.log(resp.data)
+
             // alertsucces
             // console.log(cookies)
         }).catch((error) => {
             alert('ocurrio un error')
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers)
-            // alertsucces
+
+            // if (error.response.status === 400) {
+            //     alertsucces
+            // }
+
         })
     }
-    console.log('isValid', isValid)
+
 
     return (
         <>
@@ -79,7 +80,7 @@ const SingUp_Card = () => {
             <div className="box_auth tablet:grid">
                 <LayoutHome>
                     <div className='box_sing_up mt-[4rem]'>
-                        <Card className="w-[63vh] items-center">
+                        <Card className="tablet:w-[63vh] w-[49vh] items-center">
                             <Card color="transparent" shadow={false}>
                                 <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">
                                     Create an account
