@@ -11,10 +11,7 @@ const swipers = () => {
     <>
       <style jsx>{
         `
-          .box_swipers{
-                width: 100%;
-                height: 100vh;
-            }
+         
             .texts_imgs{
               position: absolute;
               top: 66vh;
@@ -23,15 +20,16 @@ const swipers = () => {
               text-align: start;
               padding: 0 4vh;
               }
+              
             `
       }</style>
 
-      <div className='box_swipers'>
+      <div className='hidden tablet:w-[100%] tablet:h-[100vh] tablet:ml-[0px] tablet:block'>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 5200,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -52,8 +50,9 @@ const swipers = () => {
             </div>
 
 
-            <Image src={"/imgs_auth/user_1.svg"} alt="hola1" width={1000} height={1000} />
+            <Image src={"/imgs_auth/user_1.svg"} alt="hola1" fill />
           </SwiperSlide>
+
           <SwiperSlide>
             <div className='box_the_texts'>
               <div className='texts_imgs'>
@@ -64,8 +63,9 @@ const swipers = () => {
               </div>
             </div>
 
-            <Image src={"/imgs_auth/user_2.svg"} alt="hola2" width={1000} height={1000} />
+            <Image src={"/imgs_auth/user_2.svg"} alt="hola2" fill />
           </SwiperSlide>
+
           <SwiperSlide>
             <div className='box_the_texts'>
               <div className='texts_imgs'>
@@ -77,7 +77,7 @@ const swipers = () => {
               </div>
             </div>
 
-            <Image src={"/imgs_auth/user_3.svg"} alt="hola3" width={1000} height={1000} />
+            <Image src={"/imgs_auth/user_3.svg"} alt="hola3" fill />
           </SwiperSlide>
           <SwiperSlide>
             <div className='box_the_texts'>
@@ -90,7 +90,7 @@ const swipers = () => {
               </div>
             </div>
 
-            <Image src={"/imgs_auth/user_4.svg"} alt="hola4" width={1000} height={1000} />
+            <Image src={"/imgs_auth/user_4.svg"} alt="hola4" fill />
           </SwiperSlide>
         </Swiper>
       </div>

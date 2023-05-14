@@ -1,5 +1,5 @@
 import LayoutHome from '@/Layout/Layout-Auth';
-import Swipers from '@/pages/auth/swipers';
+import Swipers from '@/components/swipers';
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
