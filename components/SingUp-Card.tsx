@@ -35,12 +35,14 @@ const SingUp_Card = () => {
         sing_Up({ email: data.email, password: data.password }).then((resp) => {
             cookies.set('app-token', resp.data.token)
             router.push('/application')
-
+            console.log(resp.data)
             // alertsucces
             // console.log(cookies)
         }).catch((error) => {
             alert('ocurrio un error')
-
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers)
             // if (error.response.status === 400) {
             //     alertsucces
             // }
