@@ -3,17 +3,23 @@ import Swipers from '@/pages/auth/swipers';
 import { Button, Card, Checkbox, Input, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
-import { login } from '@/lib/service/auth.service';
+import { sing_Up } from '@/lib/service/auth.service';
 import cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
-
+// import Swal from 'sweetalert2';
 const SingUp_Card = () => {
-
+    // const alertsucces = Swal.fire({
+    //     title: 'Información guardada con éxito!',
+    //     text: 'Something went wrong!',
+    //     icon: 'success',
+    //     iconColor: '#30a702'
+    // })
     const router = useRouter()
 
     const { register, handleSubmit, formState: { isValid } } = useForm({
         defaultValues: {
+
             email: '',
             password: ''
         },
@@ -23,11 +29,18 @@ const SingUp_Card = () => {
         email: string;
         password: string
     }) => {
-        login({ email: data.email, password: data.password }).then((resp) => {
+        sing_Up({ email: data.email, password: data.password }).then((resp) => {
             cookies.set('app-token', resp.data.token)
             router.push('/application')
-        }).catch(() => {
+            console.log(resp.data)
+            // alertsucces
+            // console.log(cookies)
+        }).catch((error) => {
             alert('ocurrio un error')
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers)
+            // alertsucces
         })
     }
     console.log('isValid', isValid)
@@ -62,7 +75,7 @@ const SingUp_Card = () => {
             }</style>
             <div className="box_auth">
                 <LayoutHome>
-                    <div className='box_sing_up'>
+                    <div className='box_sing_up mt-[4rem]'>
                         <Card className="w-[63vh] items-center">
                             <Card color="transparent" shadow={false}>
                                 <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">

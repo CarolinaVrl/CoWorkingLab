@@ -3,32 +3,35 @@ import Swipers from '@/pages/auth/swipers';
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
-// import { login } from '@/lib/service/auth.service';
-// import cookies from 'js-cookie';
-// import { useRouter } from 'next/router';
-// import { useForm } from "react-hook-form";
+import { login } from '@/lib/service/auth.service';
+import cookies from 'js-cookie';
+import { useRouter } from 'next/router';
+import { useForm } from "react-hook-form";
 
-const loginUps = () => {
-  // const router = useRouter()
-  // const { register, handleSubmit, formState: { isValid } } = useForm({
-  //   defaultValues: {
-  //     email: '',
-  //     password: ''
-  //   },
-  //   mode: 'onChange'
-  // });
-  // const onSubmit = (data: {
-  //   email: string;
-  //   password: string
-  // }) => {
-  //   login({ email: data.email, password: data.password }).then((resp) => {
-  //     cookies.set('app-token', resp.data.token);
-  //     router.push('/')
-  //   }).catch(() => {
-  //     alert('ocurrio un error')
-  //   })
-  // }
-  // console.log('isValid', isValid)
+const LoginUps = () => {
+  const router = useRouter()
+  const { register, handleSubmit, formState: { isValid } } = useForm({
+    defaultValues: {
+      email: '',
+      password: ''
+    },
+    mode: 'onChange'
+  });
+  const onSubmit = (data: {
+    email: string;
+    password: string
+  }) => {
+    login({ email: data.email, password: data.password }).then((resp) => {
+      cookies.set('app-token', resp.data.token);
+      router.push('/application')
+    }).catch((error) => {
+      alert('ocurrio un error')
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers)
+    })
+  }
+  console.log('isValid', isValid)
 
   return (
     <>
@@ -70,13 +73,13 @@ const loginUps = () => {
                   Log in to your account.
                 </Typography>
                 {/* {onSubmit={handleSubmit(onSubmit)} } */}
-                <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
+                <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
 
                   <div className="mb-4 flex flex-col gap-6">
                     <h1 className="inputs_title font-nunito text-[#000000]"  >Create username*</h1>
-                    <Input size="lg" label="Enter your username" />
+                    <Input size="lg" label="Enter your username" {...register("email", { required: true })} />
                     <h1 className="inputs_title font-nunito text-[#000000]" >Password*</h1>
-                    <Input type="password" size="lg" label="Enter password" />
+                    <Input type="password" size="lg" label="Enter password" {...register("password", { required: true })} />
                   </div>
                   <Link
                     href="/auth/reset-password"
@@ -108,5 +111,5 @@ const loginUps = () => {
   );
 };
 
-export default loginUps;
+export default LoginUps;
 

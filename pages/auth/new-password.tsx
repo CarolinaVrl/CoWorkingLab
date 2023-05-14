@@ -1,14 +1,42 @@
-
 import LayoutHome from '@/Layout/Layout-Auth';
+import { change_Password } from '@/lib/service/auth.service';
 import {
     Button,
     Card,
     Input,
     Typography
 } from "@material-tailwind/react";
+import cookies from 'js-cookie';
 import Link from "next/link";
+import { useRouter } from 'next/router';
+import { useForm } from "react-hook-form";
 
-const new_password = () => {
+const NewPassword = () => {
+    const router = useRouter()
+
+    const { register, handleSubmit, formState: { isValid } } = useForm({
+        defaultValues: {
+            password: '',
+        },
+        mode: 'onChange'
+    });
+    const onSubmit = (data: {
+        password: string
+    }) => {
+        change_Password({ password: data.password }).then((resp) => {
+            cookies.set('app-token', resp.data.token)
+            router.push('/auth/successful-password')
+            console.log(resp.data)
+        }).catch((error) => {
+            alert('ocurrio un error')
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers)
+        })
+    }
+    console.log('isValid', isValid)
+
+
     return (
         <>
             <style jsx>{
@@ -44,16 +72,16 @@ const new_password = () => {
                                 <Typography color="gray" className="mt-1 font-mulish text-[#757575]">
                                     We send a link to reset you<br />password to your email
                                 </Typography>
-                                <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
+                                <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 font-nunito text-[12px]">
                                     <div className="mb-4 flex flex-col gap-6">
                                         <h1 className="inputs_title font-mulish text-[#000000]">New Password</h1>
-                                        <Input type="password" size="lg" label="Enter your new Password" />
+                                        <Input type="password" size="lg" label="Enter your new Password" {...register("password", { required: true })} />
                                         <h1 className="inputs_title font-mulish text-[#000000]">Repeat Password*</h1>
                                         <Input type="password" size="lg" label="Enter password" />
                                     </div>
-                                    <Link href="/auth/successful-password">
-                                        <Button className="mt-6" fullWidth>RESET MY PASSWORD</Button>
-                                    </Link>
+
+                                    <Button className="mt-6" fullWidth type="submit">RESET MY PASSWORD</Button>
+
 
                                 </form>
                             </Card>
@@ -76,5 +104,5 @@ const new_password = () => {
     );
 };
 
-export default new_password;
+export default NewPassword;
 
