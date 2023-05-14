@@ -1,13 +1,18 @@
 import axios from "../helpers/axios.helpers";
 
 
-const login = (data: { email: string; passuord: string }) => {
+const login = (data: { email: string, password: string }) => {
     return axios.post('/auth/login', data)
 }
 
-const sing_up = (data: { email: string; passuord: string }) => {
+const sing_Up = (data: {
+    first_name: string,
+    last_name: string,
+    email: string,
+    password: string
+}) => {
     return axios.post('/auth/sign-up', data)
 }
 
-export { login, sing_up };
+export { login, sing_Up };
 

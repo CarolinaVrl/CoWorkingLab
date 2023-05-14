@@ -1,6 +1,6 @@
 import Image from "next/image";
 const FooterApplication = ({ page }: { page: string }) => {
-    // const images = page === 'Application' ? '/imgs_application/img-1.svg' : 'todo salio mal'
+    const images = page
     return (
         <>
             <style jsx>
@@ -45,7 +45,7 @@ const FooterApplication = ({ page }: { page: string }) => {
             `}
             </style>
             <div className="minBox justify-center w-full md:gap-14">
-
+                <h1>{images}</h1>
                 <div className="relative">
                     <div className="w-[203px] flex flex-col items-center justify-center relative -left-4 h-[203px] rounded-full bg-white">
                         <p>👋</p>
