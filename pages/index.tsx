@@ -5,11 +5,12 @@ import SenMessageHome from '@/components/SenMessageHome';
 import ValuableInvest from '@/components/Valuable-Invest';
 import WhyChoose from '@/components/Why-Choose';
 import { useEffect, useState } from 'react';
+
 import Lottie from 'react-lottie';
 import animation from '../public/Animacion team.json';
 
 export default function Index() {
-  const defaultAnimation = {
+  const defaultAnimation: any = {
     loop: true,
     autoplay: true,
     rendererSettings: {
