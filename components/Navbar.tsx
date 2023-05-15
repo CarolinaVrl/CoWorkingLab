@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import mexico from '../public/imgs_users/flag_Mexico.png';
 function Navbar() {
   return (
@@ -15,7 +16,9 @@ function Navbar() {
         </ul>
       </div>
       <button className="hidden md:flex rounded-xl items-center justify-center h-11 w-[157px] bg-blueLight">
-        <h2 className="text-white text-base r">Get started</h2>
+        <Link href="/auth/login">
+          <h2 className="text-white text-base r">Get started</h2>
+        </Link>
       </button>
     </div>
   );

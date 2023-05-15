@@ -12,14 +12,9 @@ function SenMessageHome() {
   const closeModal = () => {
     setOpenModal(false);
   };
-  const validate = (values: any) => {
-    if (values.name === '') {
-      setError(true);
-    }
-    return error;
-  };
+
   const SendMessage = () => {
-    if (error) {
+    if (!error) {
       setOpenModal(true);
     }
   };
