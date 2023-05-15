@@ -34,7 +34,9 @@ const swiperText = () => {
                                 <Image src={"/imgs_auth/user_1.svg"} alt="hola1" width={160} height={260} />
                             </div>
                             <div className='w-[66%] h-[260px] pl-[2rem] pr-[3rem] text-left'>
-                                <p className='mb-[3rem] text-[16px] italic mulish'>This product allows you to collaborate, experiment, and test much more effectively and efficiently.</p>
+                                <p className='mb-[3rem] text-[16px] italic mulish'>
+                                    “This product allows you to collaborate, experiment, and test much more effectively and efficiently.”
+                                </p>
 
                                 <h1 className='font-[600] text-[16px] mulish'>John</h1>
 

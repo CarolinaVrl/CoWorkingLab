@@ -25,7 +25,7 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.81;
 }
 
 .swiper-pagination {
@@ -45,7 +45,7 @@
     background-color: white !important;
   }
   .swiper-pagination {
-    left: -20vh !important;
+    left: -17vh !important;
     top: -6vh !important;
   }
 }
