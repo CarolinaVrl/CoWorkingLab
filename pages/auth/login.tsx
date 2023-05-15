@@ -1,13 +1,13 @@
 import LayoutHome from '@/Layout/Layout-Auth';
-import Swipers from '@/pages/auth/swipers';
+import Swipers from '@/components/swipers';
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
+import SwiperText from '@/components/textSwiper';
 import { login } from '@/lib/service/auth.service';
 import cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
-
 const LoginUps = () => {
   const router = useRouter()
   const { register, handleSubmit, formState: { isValid } } = useForm({
@@ -37,9 +37,10 @@ const LoginUps = () => {
     <>
       <style jsx>{
         `
-          .box_sing_up{
+          .box_loginUp{
             text-align: -webkit-center;
-            margin-top: 2rem;
+            margin-top: 5rem;
+            margin-bottom: 11.5rem;
           }
           .inputs_title{
             margin: -5px 0px -16px 0vh;
@@ -52,19 +53,18 @@ const LoginUps = () => {
             font-size: 12px;
           }
           .box_auth{
-            display: grid;
-            grid-template-columns: 1fr 59vh;
-            width: 100%;
-            height: 100%;
+              grid-template-columns: 1fr 59vh;
+          width: 100%;
+          height: 100%;
            
           }
           `
       }</style>
 
-      <div className="box_auth">
+      <div className="box_auth tablet:grid">
         <LayoutHome>
-          <div className='box_sing_up'>
-            <Card className="w-[63vh] items-center">
+          <div className='box_loginUp mt-[4rem]'>
+            <Card className="tablet:w-[63vh] w-[49vh] items-center">
               <Card color="transparent" shadow={false}>
                 <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">
                   Welcome to you Resimex
@@ -106,6 +106,7 @@ const LoginUps = () => {
           </div>
         </LayoutHome>
         <Swipers />
+        <SwiperText />
       </div>
     </>
   );

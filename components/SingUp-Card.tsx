@@ -1,5 +1,5 @@
 import LayoutHome from '@/Layout/Layout-Auth';
-import Swipers from '@/pages/auth/swipers';
+import Swipers from '@/components/swipers';
 import { Button, Card, Checkbox, Input, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
@@ -7,6 +7,9 @@ import { sing_Up } from '@/lib/service/auth.service';
 import cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+
+import SwiperText from './textSwiper';
+
 // import Swal from 'sweetalert2';
 const SingUp_Card = () => {
     // const alertsucces = Swal.fire({
@@ -17,7 +20,7 @@ const SingUp_Card = () => {
     // })
     const router = useRouter()
 
-    const { register, handleSubmit, formState: { isValid } } = useForm({
+    const { register, handleSubmit } = useForm({
         defaultValues: {
 
             email: '',
@@ -40,17 +43,20 @@ const SingUp_Card = () => {
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers)
-            // alertsucces
+            // if (error.response.status === 400) {
+            //     alertsucces
+            // }
+
         })
     }
-    console.log('isValid', isValid)
+
 
     return (
         <>
             <style jsx>{
                 `
         .box_auth{
-          display: grid;
+          
           grid-template-columns: 1fr 59vh;
           width: 100%;
           height: 100%;
@@ -58,7 +64,7 @@ const SingUp_Card = () => {
         }
           .box_sing_up{
             text-align: -webkit-center;
-            margin-top: 2rem;
+            margin-top: 5rem;
           }
           .inputs_title{
             margin: -5px 0px -16px 0vh;
@@ -73,10 +79,10 @@ const SingUp_Card = () => {
 
           `
             }</style>
-            <div className="box_auth">
+            <div className="box_auth tablet:grid">
                 <LayoutHome>
                     <div className='box_sing_up mt-[4rem]'>
-                        <Card className="w-[63vh] items-center">
+                        <Card className="tablet:w-[63vh] w-[49vh] items-center">
                             <Card color="transparent" shadow={false}>
                                 <Typography variant="h4" color="blue-gray" className="font-nunito text-[#07469C]">
                                     Create an account
@@ -93,7 +99,7 @@ const SingUp_Card = () => {
                                         <h1 className="inputs_title font-mulish text-[#000000]"  >Password*</h1>
                                         <Input type="password" size="lg" label="Enter password" {...register("password", { required: true })} />
                                     </div>
-                                    <div>
+                                    <div className='flex'>
                                         <Checkbox />
                                         <p>
                                             By creating an account you are agreeing to our
@@ -120,8 +126,12 @@ const SingUp_Card = () => {
                         </Card>
                     </div>
                 </LayoutHome>
+
                 <Swipers />
+
+
             </div>
+            <SwiperText />
         </>
     );
 };

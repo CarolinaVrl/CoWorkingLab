@@ -16,8 +16,8 @@ const Menu_ruts = () => {
         `.menu_provisional{
           text-align: center;
           position: absolute;
-          top: 11px;
-          left: 4px;
+          top: 13px;
+          left: 8px;
           z-index: 2;
             }`
       }
