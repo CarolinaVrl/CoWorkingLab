@@ -11,7 +11,7 @@ function LayoutApplication({ children, page }: { children: React.ReactNode, page
             </Head>
             <Menu_ruts />
             {children}
-            <FooterApplication page={page} />
+            <FooterApplication />
         </div>
     );
 }

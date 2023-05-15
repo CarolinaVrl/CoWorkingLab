@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
- 
+const withMT = require('@material-tailwind/react/utils/withMT');
+
 module.exports = withMT({
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -22,7 +22,9 @@ module.exports = withMT({
       },
       screens: {
         xs: '375px',
+        phone: '414px',
         sm: '600px',
+        tablet: '768px',
         md: '900px',
         lg: '1200px',
         xl: '1536px',
