@@ -1,5 +1,5 @@
 import FooterHome from '@/components/FooterHome';
-import Navbar from '@/components/Nav-bar';
+import Navbar from '@/components/Navbar';
 import { ReactNode } from 'react';
 
 interface layoutHome {

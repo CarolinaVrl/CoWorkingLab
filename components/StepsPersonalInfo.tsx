@@ -6,7 +6,7 @@ import ModalHelp from './ModalHelp';
 import TextCardHome from './Text-card-home';
 function StepsPersonalInfo() {
   const [isVisible, setIsVisible] = useState(false);
-  const showData = (values: object) => {
+  const showData = (values: any) => {
     alert(values);
   };
   const closeModal = () => {
@@ -55,67 +55,67 @@ function StepsPersonalInfo() {
                 className=" font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="name"
                 placeholder="Legal Name"
-                type=""
+                type="text"
               />
               <Field
                 className=" font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="nacionality"
                 placeholder="Your Nacionality"
-                type=""
+                type="text"
               />
               <Field
                 className=" font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="gender"
                 placeholder="Your Gender"
-                type=""
+                type="text"
               />
               <Field
                 className=" font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="residence"
                 placeholder="Your Residence"
-                type=""
+                type="text"
               />
               <Field
                 className=" font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="addres"
                 placeholder="Residence Addres"
-                type=""
+                type="text"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="postcode"
                 placeholder="Postcode"
-                type=""
+                type="text"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="phone"
                 placeholder="Contact Phone"
-                type=""
+                type="text"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="email"
                 placeholder="E-mail"
-                type=""
+                type="email"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="job"
                 placeholder="Your Job"
-                type=""
+                type="text"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="birthday"
                 placeholder="Date of birth"
-                type=""
+                type="text"
               />
               <Field
                 className="font-mulish w-full px-7 py-1 border-b-black border-b-solid border-2                outline-none focus:border-b-blueLight peer placeholder-black"
                 name="comments"
                 placeholder="Any comments"
-                type=""
+                type="text"
               />
               <button
                 className="text-white w-full text-sm h-[55.92px] rounded-[10px] bg-blueLight text-mulish font-bold"
